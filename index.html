@@ -11,10 +11,10 @@
   <style>
     :root {
       --bg: #f7f4ee;
-      --paper: #fffdf9;
+      --paper: #fffdfa;
       --text: #1d1b19;
       --muted: #5f5952;
-      --line: #d9d1c7;
+      --line: #cfc5b8;
       --accent: #2d2a27;
       --max: 1120px;
     }
@@ -114,7 +114,7 @@
     }
 
     .hero p {
-      max-width: 42rem;
+      max-width: 36rem;
       font-size: 1.15rem;
       color: var(--muted);
     }
@@ -165,14 +165,20 @@
     .card {
       background: var(--paper);
       border: 1px solid var(--line);
-      padding: 1.4rem;
+      padding: 1.6rem;
     }
 
     .samples {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
+      gap: 1.25rem;
       margin-top: 2rem;
+    }
+
+    .sample-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
     }
 
     .sample {
@@ -189,6 +195,12 @@
       display: block;
     }
 
+    .caption {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.4;
+    }
+
     ul.clean {
       list-style: none;
       padding: 0;
@@ -202,13 +214,8 @@
     .contact-box {
       background: var(--paper);
       border: 1px solid var(--line);
-      padding: 1.5rem;
+      padding: 1.6rem;
       max-width: 48rem;
-    }
-
-    .small-note {
-      color: var(--muted);
-      font-size: 0.97rem;
     }
 
     footer {
@@ -327,14 +334,25 @@
           A small selection of interior work showing clarity, restraint, and comfort with long-form layouts.
         </p>
         <div class="samples">
-          <div class="sample">
-            <img src="images/sample-1.jpg" alt="Business and nonfiction book interior sample" />
+          <div class="sample-item">
+            <div class="sample">
+              <img src="images/sample-1.jpg" alt="Business and nonfiction book interior sample" />
+            </div>
+            <div class="caption">Business / nonfiction interior</div>
           </div>
-          <div class="sample">
-            <img src="images/sample-2.jpg" alt="Technical or research-heavy layout sample" />
+
+          <div class="sample-item">
+            <div class="sample">
+              <img src="images/sample-2.jpg" alt="Technical or research-heavy layout sample" />
+            </div>
+            <div class="caption">Technical / reference layout</div>
           </div>
-          <div class="sample">
-            <img src="images/sample-3.jpg" alt="Guide, workbook, or report layout sample" />
+
+          <div class="sample-item">
+            <div class="sample">
+              <img src="images/sample-3.jpg" alt="Guide, workbook, or report layout sample" />
+            </div>
+            <div class="caption">Guide / workbook / report sample</div>
           </div>
         </div>
       </div>
@@ -451,9 +469,6 @@
             To start a conversation, email <a href="mailto:hello@ruffpress.com"><strong>hello@ruffpress.com</strong></a>
             with your project type, approximate word count or page count, timeline, and any elements such as images,
             tables, footnotes, references, or other complex features.
-          </p>
-          <p class="small-note">
-            You can also write directly to <a href="mailto:joel@ruffpress.com">joel@ruffpress.com</a>.
           </p>
         </div>
       </div>

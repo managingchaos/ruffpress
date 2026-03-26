@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ruff Press | Professional Typesetting for Books and Long-Form Documents</title>
-  <meta name="description" content="Ruff Press is a boutique editorial studio offering professional typesetting for books, reports, and long-form documents." />
+  <meta
+    name="description"
+    content="Ruff Press is a boutique editorial studio offering professional typesetting for books, reports, and long-form documents."
+  />
   <style>
     :root {
       --bg: #f7f4ee;
@@ -16,8 +19,14 @@
       --max: 1120px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
@@ -26,8 +35,15 @@
       line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
     .wrap {
       width: min(calc(100% - 2rem), var(--max));
@@ -84,9 +100,18 @@
       font-weight: 400;
     }
 
-    h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); max-width: 12ch; }
-    h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
-    h3 { font-size: 1.2rem; }
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      max-width: 12ch;
+    }
+
+    h2 {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+    }
+
+    h3 {
+      font-size: 1.2rem;
+    }
 
     .hero p {
       max-width: 42rem;
@@ -147,13 +172,16 @@
 
     .sample {
       aspect-ratio: 3 / 4;
-      background: linear-gradient(180deg, #f2ece3, #e8dfd3);
+      background: var(--paper);
       border: 1px solid var(--line);
-      display: flex;
-      align-items: end;
-      padding: 1rem;
-      color: var(--muted);
-      font-size: 0.95rem;
+      overflow: hidden;
+    }
+
+    .sample img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     ul.clean {
@@ -180,9 +208,20 @@
     }
 
     @media (max-width: 800px) {
-      .grid, .samples, ul.clean { grid-template-columns: 1fr; }
-      .nav { align-items: flex-start; flex-direction: column; }
-      .hero { padding-top: 4.5rem; }
+      .grid,
+      .samples,
+      ul.clean {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero {
+        padding-top: 4.5rem;
+      }
     }
   </style>
 </head>
@@ -215,7 +254,11 @@
     <section>
       <div class="wrap">
         <h2>Thoughtful typesetting. Clean structure. Professional output.</h2>
-        <p class="lede">Ruff Press helps turn finished manuscripts into polished pages ready for print or digital distribution. From nonfiction books and technical manuscripts to guides, reports, and content-heavy publications, the work is grounded in clarity, consistency, and readability.</p>
+        <p class="lede">
+          Ruff Press helps turn finished manuscripts into polished pages ready for print or digital distribution.
+          From nonfiction books and technical manuscripts to guides, reports, and content-heavy publications,
+          the work is grounded in clarity, consistency, and readability.
+        </p>
       </div>
     </section>
 
@@ -246,11 +289,19 @@
     <section id="work">
       <div class="wrap">
         <h2>Sample Work</h2>
-        <p class="lede">Replace these placeholders with 2 to 4 spreads, mockups, or project snapshots that show range and restraint.</p>
+        <p class="lede">
+          A small selection of interior work showing clarity, restraint, and comfort with long-form layouts.
+        </p>
         <div class="samples">
-          <div class="sample">Business / nonfiction interior</div>
-          <div class="sample">Technical or research-heavy layout</div>
-          <div class="sample">Guide, workbook, or report sample</div>
+          <div class="sample">
+            <img src="images/sample-1.jpg" alt="Business and nonfiction book interior sample" />
+          </div>
+          <div class="sample">
+            <img src="images/sample-2.jpg" alt="Technical or research-heavy layout sample" />
+          </div>
+          <div class="sample">
+            <img src="images/sample-3.jpg" alt="Guide, workbook, or report layout sample" />
+          </div>
         </div>
       </div>
     </section>
@@ -299,10 +350,22 @@
       <div class="wrap">
         <h2>Process</h2>
         <div class="grid">
-          <div class="card"><h3>1. Review</h3><p>Share your manuscript, scope, and timeline.</p></div>
-          <div class="card"><h3>2. Quote</h3><p>Receive a clear estimate based on length and complexity.</p></div>
-          <div class="card"><h3>3. Typesetting</h3><p>Your manuscript is shaped into a clean, readable interior.</p></div>
-          <div class="card"><h3>4. Delivery</h3><p>Final files are prepared for print, digital use, or handoff.</p></div>
+          <div class="card">
+            <h3>1. Review</h3>
+            <p>Share your manuscript, scope, and timeline.</p>
+          </div>
+          <div class="card">
+            <h3>2. Quote</h3>
+            <p>Receive a clear estimate based on length and complexity.</p>
+          </div>
+          <div class="card">
+            <h3>3. Typesetting</h3>
+            <p>Your manuscript is shaped into a clean, readable interior.</p>
+          </div>
+          <div class="card">
+            <h3>4. Delivery</h3>
+            <p>Final files are prepared for print, digital use, or handoff.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -310,7 +373,10 @@
     <section id="about">
       <div class="wrap">
         <h2>About Ruff Press</h2>
-        <p class="lede">Ruff Press is a boutique editorial studio focused on typesetting and long-form document production. The name carries a bit of character. The work is disciplined, thoughtful, and built to hold up on the page.</p>
+        <p class="lede">
+          Ruff Press is a boutique editorial studio focused on typesetting and long-form document production.
+          The name carries a bit of character. The work is disciplined, thoughtful, and built to hold up on the page.
+        </p>
       </div>
     </section>
 
@@ -318,7 +384,10 @@
       <div class="wrap">
         <h2>Request a Quote</h2>
         <div class="contact-box">
-          <p>Send a note with your project type, approximate word count or page count, complexity details, target timeline, and whether the file is for print, digital, or both.</p>
+          <p>
+            Send a note with your project type, approximate word count or page count, complexity details,
+            target timeline, and whether the file is for print, digital, or both.
+          </p>
           <p><strong>Email:</strong> <a href="mailto:hello@ruffpress.com">hello@ruffpress.com</a></p>
         </div>
       </div>

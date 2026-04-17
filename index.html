@@ -3,21 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ruff Press | Professional Typesetting for Books, Reports, and Complex Documents</title>
+
+  <title>Ruff Press | Book Design, Typesetting, and Production</title>
   <meta
     name="description"
-    content="Ruff Press is a boutique editorial studio offering professional typesetting for books, reports, and complex long-form documents."
+    content="Ruff Press provides book design, typesetting, and production for serious authors, publishers, consultants, experts, and organizations."
   />
+
+  <link rel="stylesheet" href="https://use.typekit.net/bjv5hfz.css">
   <link rel="icon" href="favicon.ico" sizes="any">
+
   <style>
     :root {
-      --bg: #f7f4ee;
-      --paper: #fffdfa;
-      --text: #1d1b19;
-      --muted: #5f5952;
-      --line: #cfc5b8;
-      --accent: #2d2a27;
-      --max: 1120px;
+      --bg: #f6f1e8;
+      --paper: #fffdf8;
+      --cream: #ebe3d5;
+      --text: #201c18;
+      --muted: #514b44;
+      --line: #cec2b2;
+      --dark: #23170f;
+      --accent: #4E1B17;
+      --max: 1160px;
     }
 
     * {
@@ -30,10 +36,11 @@
 
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
+font-family: "adelphi-pe-variable", Arial, Helvetica, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
+      font-size: 17px;
     }
 
     a {
@@ -41,7 +48,8 @@
       text-decoration: none;
     }
 
-    img {
+    img,
+    video {
       max-width: 100%;
       display: block;
     }
@@ -54,7 +62,7 @@
     header {
       position: sticky;
       top: 0;
-      background: rgba(247, 244, 238, 0.95);
+      background: rgba(246, 241, 232, 0.94);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--line);
       z-index: 100;
@@ -68,63 +76,104 @@
       gap: 1rem;
     }
 
+    .nav-links,
+    .eyebrow,
+    .btn,
+    .caption,
+    .proof-grid,
+    .trust-strip,
+    .hero-art-caption,
+    .video-caption,
+    footer {
+      font-family: "mendl-sans", Arial, sans-serif;
+    }
+
     .brand {
-      font-size: 1.15rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      line-height: 0;
+      flex-shrink: 0;
+    }
+
+    .brand img {
+      display: block;
+      height: 42px;
+      width: auto;
     }
 
     .nav-links {
       display: flex;
       gap: 1.25rem;
       flex-wrap: wrap;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       color: var(--muted);
     }
 
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
     .hero {
-      padding: 6rem 0 4rem;
+      padding: 7rem 0 5rem;
       border-bottom: 1px solid var(--line);
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 4rem;
+      align-items: end;
     }
 
     .eyebrow {
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.8rem;
-      color: var(--muted);
+      letter-spacing: 0.14em;
+      font-size: 0.78rem;
+      color: var(--accent);
       margin-bottom: 1rem;
     }
 
     h1, h2, h3 {
       margin: 0 0 1rem;
-      line-height: 1.15;
+      line-height: 1.12;
       font-weight: 400;
+      font-family: "meursault-variable", Georgia, "Times New Roman", serif;
     }
 
     h1 {
-      font-size: clamp(2.5rem, 6vw, 4.4rem);
-      max-width: 12ch;
+      font-size: clamp(3rem, 7vw, 6rem);
+      max-width: 12.5ch;
+      letter-spacing: -0.04em;
     }
 
     h2 {
-      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: -0.03em;
     }
 
     h3 {
       font-size: 1.2rem;
     }
 
-    .hero p {
-      max-width: 36rem;
-      font-size: 1.15rem;
+    p {
+      margin-top: 0;
+    }
+
+    .hero-copy {
+      max-width: 31rem;
       color: var(--muted);
+      font-size: 1.12rem;
+    }
+
+    .hero-copy p {
+      margin-bottom: 1.2rem;
     }
 
     .actions {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
-      margin-top: 2rem;
+      margin-top: 1.5rem;
     }
 
     .btn {
@@ -134,10 +183,11 @@
       background: var(--accent);
       color: var(--paper);
       transition: 0.2s ease;
+      font-size: 0.95rem;
     }
 
     .btn:hover {
-      opacity: 0.92;
+      opacity: 0.9;
     }
 
     .btn.secondary {
@@ -145,21 +195,192 @@
       color: var(--accent);
     }
 
+    .btn.light {
+      background: var(--paper);
+      color: var(--dark);
+      border-color: var(--paper);
+    }
+
+    .btn.light:hover {
+      opacity: 0.88;
+    }
+
+    .hero-art {
+      margin-top: 2.75rem;
+      max-width: 22rem;
+    }
+
+    .hero-art-image {
+      aspect-ratio: 4 / 3;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .hero-art-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-art-caption {
+      margin-top: 0.7rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .proof-bar {
+      background: var(--dark);
+      color: var(--paper);
+      padding: 1.35rem 0;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .proof-item {
+      border-left: 1px solid rgba(255, 255, 255, 0.24);
+      padding-left: 1rem;
+      color: rgba(255, 253, 248, 0.88);
+    }
+
+    .trust-strip-wrap {
+      padding-top: 1.5rem;
+    }
+
+    .trust-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
     section {
-      padding: 4rem 0;
+      padding: 5rem 0;
       border-bottom: 1px solid var(--line);
     }
 
+    .section-warm {
+      background: var(--cream);
+    }
+
+    .section-dark {
+      background: var(--dark);
+      color: var(--paper);
+      border-bottom: none;
+    }
+
+    .section-dark .eyebrow {
+      color: #d7a9a2;
+    }
+
+    .section-dark .lede {
+      color: rgba(255, 253, 248, 0.76);
+    }
+
     .lede {
-      max-width: 48rem;
+      max-width: 52rem;
       color: var(--muted);
-      font-size: 1.05rem;
+      font-size: 1.08rem;
+    }
+
+    .intro-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .callout {
+      border-left: 4px solid var(--accent);
+      padding: 1.3rem 1.5rem;
+      background: var(--paper);
+      color: var(--text);
+    }
+
+    .video-wrap {
+      margin-top: 2rem;
+    }
+
+    .video-frame {
+      aspect-ratio: 16 / 9;
+      background: #ddd6cb;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .video-frame video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(35, 23, 15, 0.58) 0%,
+        rgba(35, 23, 15, 0.18) 38%,
+        rgba(35, 23, 15, 0.04) 72%,
+        rgba(35, 23, 15, 0.01) 100%
+      );
+      pointer-events: none;
+    }
+
+    .video-overlay-text {
+      position: absolute;
+      left: 1.5rem;
+      bottom: 1.4rem;
+      max-width: 30rem;
+      color: var(--paper);
+      z-index: 2;
+    }
+
+    .video-logo {
+      margin-bottom: 0.75rem;
+      max-width: 180px;
+    }
+
+    .video-logo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      filter: brightness(0) invert(1);
+    }
+
+    .video-title {
+      font-family: "meursault-variable", Georgia, "Times New Roman", serif;
+      font-size: clamp(1.4rem, 2.4vw, 2.2rem);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+
+    .video-caption {
+      margin-top: 0.85rem;
+      color: var(--muted);
+      font-size: 0.92rem;
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.5rem;
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
       margin-top: 2rem;
     }
 
@@ -167,33 +388,47 @@
       background: var(--paper);
       border: 1px solid var(--line);
       padding: 1.6rem;
+      font-size: 1.02rem;
     }
 
-    .samples {
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .feature-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: 1.35fr 0.65fr;
       gap: 1.25rem;
       margin-top: 2rem;
     }
 
-    .sample-item {
+    .feature-main,
+    .feature-side {
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
     }
 
-    .sample {
-      aspect-ratio: 3 / 4;
+    .feature-image,
+    .side-image {
       background: var(--paper);
       border: 1px solid var(--line);
       overflow: hidden;
     }
 
-    .sample img {
+    .feature-image {
+      aspect-ratio: 16 / 10;
+    }
+
+    .side-image {
+      aspect-ratio: 4 / 3;
+    }
+
+    .feature-image img,
+    .side-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
     }
 
     .caption {
@@ -202,21 +437,115 @@
       line-height: 1.4;
     }
 
-    ul.clean {
-      list-style: none;
-      padding: 0;
-      margin: 1.25rem 0 0;
+    .side-stack {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.75rem 1.5rem;
+      gap: 1.25rem;
+    }
+
+    .service-row {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .service-row:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .service-row p {
+      color: var(--muted);
+      max-width: 52rem;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .comparison-box {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 1.75rem;
+    }
+
+    .comparison-box h3 {
+      margin-bottom: 1rem;
+    }
+
+    .comparison-box ul {
+      margin: 0;
+      padding-left: 1.2rem;
       color: var(--muted);
     }
 
+    .comparison-box li {
+      margin-bottom: 0.55rem;
+    }
+
+    ul.checklist {
+      padding-left: 1.2rem;
+      margin: 1rem 0 0;
+      color: var(--muted);
+    }
+
+    ul.checklist li {
+      margin-bottom: 0.45rem;
+    }
+
+    .quote-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .not-fit {
+      background: #f9f6f0;
+    }
+
+    .contact-band {
+      background: var(--dark);
+      color: var(--paper);
+      padding: 5rem 0;
+    }
+
+    .contact-band .eyebrow {
+      color: #d7a9a2;
+    }
+
+    .contact-band .lede {
+      color: rgba(255, 253, 248, 0.76);
+    }
+
     .contact-box {
-      background: var(--paper);
-      border: 1px solid var(--line);
+      background: rgba(255, 253, 248, 0.08);
+      border: 1px solid rgba(255, 253, 248, 0.18);
       padding: 1.6rem;
-      max-width: 48rem;
+      max-width: 58rem;
+      margin-top: 2rem;
+    }
+
+    .contact-box a {
+      color: #f4c3bb;
+    }
+
+    .cta-points {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .cta-point {
+      color: rgba(255, 253, 248, 0.78);
+      font-family: "mendl-sans", Arial, sans-serif;
+      font-size: 0.92rem;
+      border-top: 1px solid rgba(255, 253, 248, 0.18);
+      padding-top: 0.9rem;
     }
 
     footer {
@@ -225,10 +554,37 @@
       font-size: 0.95rem;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 920px) {
+      .hero-layout,
+      .intro-layout,
+      .feature-grid,
+      .service-row,
+      .quote-grid,
+      .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .proof-grid,
+      .grid-3,
+      .cta-points {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero-art {
+        max-width: 28rem;
+      }
+
+      h1 {
+        max-width: 12ch;
+      }
+    }
+
+    @media (max-width: 720px) {
       .grid,
-      .samples,
-      ul.clean {
+      .grid-3,
+      .proof-grid,
+      .cta-points {
         grid-template-columns: 1fr;
       }
 
@@ -237,20 +593,41 @@
         flex-direction: column;
       }
 
+      .brand img {
+        height: 36px;
+      }
+
       .hero {
         padding-top: 4.5rem;
+      }
+
+      section {
+        padding: 4rem 0;
+      }
+
+      .video-overlay-text {
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+      }
+
+      .video-logo {
+        max-width: 150px;
       }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="wrap nav">
-      <a class="brand" href="#top">Ruff Press</a>
+      <a class="brand" href="#top" aria-label="Ruff Press home">
+        <img src="images/ruff_press-logo.svg" alt="Ruff Press">
+      </a>
       <nav class="nav-links">
         <a href="#services">Services</a>
         <a href="#work">Work</a>
-        <a href="#about">About</a>
+        <a href="#process">Process</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -258,102 +635,245 @@
 
   <main id="top">
     <section class="hero">
-      <div class="wrap">
-        <div class="eyebrow">Boutique editorial studio</div>
-        <h1>Professional Typesetting for Books, Reports, and Complex Documents</h1>
-        <p>Polished, readable, production-ready interiors for authors, publishers, and organizations.</p>
-        <div class="actions">
-          <a class="btn" href="#contact">Request a Quote</a>
-          <a class="btn secondary" href="#work">View Sample Work</a>
+      <div class="wrap hero-layout">
+        <div>
+          <div class="eyebrow">Boutique book production studio</div>
+          <h1>Book Design, Typesetting, and Production for Serious Authors</h1>
+        </div>
+
+        <div class="hero-copy">
+          <p>
+            Ruff Press designs polished, print-ready interiors for authors, publishers, consultants,
+            experts, and organizations producing books, reports, and long-form documents.
+          </p>
+          <div class="actions">
+            <a class="btn" href="#contact">Start a Production Review</a>
+            <a class="btn secondary" href="#work">See Sample Work</a>
+          </div>
+
+          <div class="hero-art">
+            <div class="hero-art-image">
+              <img src="images/hero-detail.jpg" alt="Close detail of a professionally produced book interior and hardcover">
+            </div>
+            <div class="hero-art-caption">Interior detail / production sample</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap trust-strip-wrap">
+        <div class="trust-strip">
+          <span>Authors</span>
+          <span>Small publishers</span>
+          <span>Consultants</span>
+          <span>Experts</span>
+          <span>Organizations</span>
+          <span>Long-form production</span>
         </div>
       </div>
     </section>
 
+    <div class="proof-bar">
+      <div class="wrap proof-grid">
+        <div class="proof-item">Hundreds of books designed and typeset</div>
+        <div class="proof-item">Print-ready PDF and EPUB production</div>
+        <div class="proof-item">KDP, IngramSpark, offset, and publisher specs</div>
+        <div class="proof-item">Built by a career designer, not a template shop</div>
+      </div>
+    </div>
+
     <section>
+      <div class="wrap intro-layout">
+        <div>
+          <div class="eyebrow">What Ruff Press does</div>
+          <h2>Thoughtful book production. Clean structure. Professional output.</h2>
+        </div>
+        <div>
+          <p class="lede">
+            Ruff Press helps turn finished manuscripts into polished pages ready for the way they will actually be published.
+            From nonfiction books and technical manuscripts to reports, guides, and content-heavy publications,
+            the work is grounded in clarity, consistency, readability, and production discipline.
+          </p>
+
+          <div class="callout">
+            Ruff Press does not force manuscripts into generic templates. Each book is shaped around its structure,
+            audience, and final publishing requirements.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-warm">
       <div class="wrap">
-        <h2>Thoughtful typesetting. Clean structure. Professional output.</h2>
+        <div class="eyebrow">Inside the production process</div>
+        <h2>From finished manuscript to production-ready book.</h2>
         <p class="lede">
-          Ruff Press helps turn finished manuscripts into polished pages ready for print or digital distribution.
-          From nonfiction books and technical manuscripts to reports, guides, and other content-heavy publications,
-          the work is grounded in clarity, consistency, and readability.
+          A quiet look at the production workflow: page systems, hierarchy, notes, exports, preflight, and finished book detail.
         </p>
-      </div>
-    </section>
 
-    <section id="services">
-      <div class="wrap">
-        <h2>Services</h2>
-        <div class="grid">
-          <div class="card">
-            <h3>Book Typesetting</h3>
-            <p>Interior layout for nonfiction, business, memoir, technical, educational, and other long-form books.</p>
+        <div class="video-wrap">
+          <div class="video-frame">
+            <video autoplay muted loop playsinline preload="auto" poster="images/video-poster.jpg">
+              <source src="videos/ruffpress-process.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+            <div class="video-overlay-text">
+              <div class="video-logo">
+                <img src="images/ruff_press-logo.svg" alt="Ruff Press">
+              </div>
+              <div class="video-title">From finished manuscript to production-ready book</div>
+            </div>
           </div>
-          <div class="card">
-            <h3>Complex Document Layout</h3>
-            <p>Reports, manuals, workbooks, white papers, and research-heavy documents that need hierarchy and polish.</p>
-          </div>
-          <div class="card">
-            <h3>Production-Ready Files</h3>
-            <p>Final files prepared for print, digital distribution, or handoff to the next stage of production.</p>
-          </div>
-          <div class="card">
-            <h3>Layout Refinement</h3>
-            <p>Cleanup of spacing, hierarchy, and consistency so the final piece feels cohesive and professional.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <h2>What’s Included</h2>
-        <div class="grid">
-          <div class="card">
-            <h3>Custom Interior Layout</h3>
-            <p>Tailored page design shaped around the manuscript, its structure, and the reading experience.</p>
-          </div>
-          <div class="card">
-            <h3>Typographic Refinement</h3>
-            <p>Careful attention to spacing, hierarchy, alignment, consistency, and overall reading rhythm.</p>
-          </div>
-          <div class="card">
-            <h3>Print-Ready Output</h3>
-            <p>Final PDF files prepared for print, digital distribution, or delivery to a printer or publishing partner.</p>
-          </div>
-          <div class="card">
-            <h3>Review and Finalization</h3>
-            <p>Revision rounds for corrections and adjustments before final handoff.</p>
-          </div>
+          <div class="video-caption">A short production reel showing structure, detail, and final file readiness.</div>
         </div>
       </div>
     </section>
 
     <section id="work">
       <div class="wrap">
-        <h2>Sample Work</h2>
+        <div class="eyebrow">Selected sample work</div>
+        <h2>Interior systems, spreads, and production details.</h2>
         <p class="lede">
-          A small selection of interior work showing clarity, restraint, and comfort with long-form layouts.
+          Sample work should show the real range of the page: chapter openings, body text, technical content, reports,
+          jackets, and publishing-ready files.
         </p>
-        <div class="samples">
-          <div class="sample-item">
-            <div class="sample">
-              <img src="images/sample-1.jpg" alt="Business and nonfiction book interior sample" />
+
+        <div class="feature-grid">
+          <div class="feature-main">
+            <div class="feature-image">
+              <img src="images/sample-1.jpg" alt="Business book interior system sample">
             </div>
-            <div class="caption">Business / nonfiction interior</div>
+            <div class="caption">Business book interior system</div>
           </div>
 
-          <div class="sample-item">
-            <div class="sample">
-              <img src="images/sample-2.jpg" alt="Technical or research-heavy layout sample" />
+          <div class="side-stack">
+            <div class="feature-side">
+              <div class="side-image">
+                <img src="images/sample-2.jpg" alt="Technical nonfiction spread sample">
+              </div>
+              <div class="caption">Technical nonfiction spread</div>
             </div>
-            <div class="caption">Technical / reference layout</div>
+
+            <div class="feature-side">
+              <div class="side-image">
+                <img src="images/sample-3.jpg" alt="Guide, workbook, or report layout sample">
+              </div>
+              <div class="caption">Guide, workbook, or report layout</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-warm">
+      <div class="wrap">
+        <div class="eyebrow">Before and after production</div>
+        <h2>The difference between formatting and a real interior system.</h2>
+
+        <div class="comparison-grid">
+          <div class="comparison-box">
+            <h3>Before Ruff Press</h3>
+            <ul>
+              <li>Default templates or inconsistent styling</li>
+              <li>Crowded pages and weak hierarchy</li>
+              <li>Unclear handling of notes, figures, and tables</li>
+              <li>Last-minute file issues at upload or print</li>
+              <li>A book that feels assembled rather than designed</li>
+            </ul>
           </div>
 
-          <div class="sample-item">
-            <div class="sample">
-              <img src="images/sample-3.jpg" alt="Guide, workbook, or report layout sample" />
-            </div>
-            <div class="caption">Guide / workbook / report sample</div>
+          <div class="comparison-box">
+            <h3>After Ruff Press</h3>
+            <ul>
+              <li>Designed interior system shaped around the manuscript</li>
+              <li>Professional typesetting and readable page rhythm</li>
+              <li>Clear handling of complexity and recurring elements</li>
+              <li>Platform-ready production files</li>
+              <li>A book that reads and presents like it should</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="eyebrow">Production services</div>
+        <h2>For books and long-form work that need more than formatting.</h2>
+
+        <div class="service-row">
+          <h3>Interior Book Design</h3>
+          <p>Tailored page design shaped around the manuscript, its structure, and the reading experience.</p>
+        </div>
+
+        <div class="service-row">
+          <h3>Typesetting and Page Layout</h3>
+          <p>Clean, consistent composition for books, reports, guides, and long-form documents.</p>
+        </div>
+
+        <div class="service-row">
+          <h3>Complex Nonfiction Production</h3>
+          <p>Careful handling of tables, charts, images, captions, footnotes, references, callouts, and layered content.</p>
+        </div>
+
+        <div class="service-row">
+          <h3>Cover and Jacket Coordination</h3>
+          <p>Support for coordinating interiors with covers, jackets, trim size, spine needs, and final production specs.</p>
+        </div>
+
+        <div class="service-row">
+          <h3>EPUB and Digital Publishing Prep</h3>
+          <p>Digital file preparation for EPUB workflows and common book distribution platforms when needed.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-dark">
+      <div class="wrap intro-layout">
+        <div>
+          <div class="eyebrow">No template shop</div>
+          <h2>Every manuscript has its own architecture.</h2>
+        </div>
+        <div>
+          <p class="lede">
+            A serious book is not just poured into a layout. It needs hierarchy, rhythm, margins, running elements,
+            notes, captions, tables, and production details that work together from first page to last.
+          </p>
+          <p class="lede">
+            Ruff Press builds the interior system around the content, the audience, and the final publishing path.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-warm">
+      <div class="wrap">
+        <div class="eyebrow">Who this is for</div>
+        <h2>Built for serious authors, experts, publishers, and organizations.</h2>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Authors</h3>
+            <p>Writers with a finished manuscript who want a professional interior ready for publication.</p>
+          </div>
+          <div class="card">
+            <h3>Consultants and Experts</h3>
+            <p>Professionals turning intellectual property, frameworks, or subject matter expertise into a book.</p>
+          </div>
+          <div class="card">
+            <h3>Small Publishers</h3>
+            <p>Independent publishers that need reliable design, typesetting, and production support.</p>
+          </div>
+          <div class="card">
+            <h3>Publishing Consultants</h3>
+            <p>Editors, coaches, and publishing partners who need a dependable production resource.</p>
+          </div>
+          <div class="card">
+            <h3>Organizations</h3>
+            <p>Businesses, nonprofits, educators, and institutions producing reports, manuals, guides, or research publications.</p>
+          </div>
+          <div class="card">
+            <h3>Complex Projects</h3>
+            <p>Manuscripts with images, tables, notes, citations, callouts, multiple sections, or detailed publishing specs.</p>
           </div>
         </div>
       </div>
@@ -361,116 +881,203 @@
 
     <section>
       <div class="wrap">
-        <h2>Built for Complex Projects</h2>
-        <ul class="clean">
-          <li>Long manuscripts</li>
-          <li>Tables and charts</li>
-          <li>Footnotes or endnotes</li>
-          <li>Citations and references</li>
-          <li>Callout boxes</li>
-          <li>Images and captions</li>
-          <li>Workbook-style layouts</li>
-          <li>Technical or academic content</li>
-        </ul>
+        <div class="eyebrow">What every project receives</div>
+        <h2>Clear deliverables, careful files, and a production-minded process.</h2>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Designed Interior System</h3>
+            <p>A thoughtful design approach for chapter openings, headings, body text, notes, captions, and recurring elements.</p>
+          </div>
+          <div class="card">
+            <h3>Typeset Pages</h3>
+            <p>Professionally composed pages with attention to spacing, hierarchy, readability, and consistency.</p>
+          </div>
+          <div class="card">
+            <h3>Print-Ready PDF</h3>
+            <p>Final PDF files prepared to meet print, platform, printer, or publisher requirements.</p>
+          </div>
+          <div class="card">
+            <h3>EPUB, If Needed</h3>
+            <p>Digital publishing preparation for EPUB workflows and common book distribution platforms.</p>
+          </div>
+          <div class="card">
+            <h3>Revision Proof</h3>
+            <p>Review files for corrections, adjustments, and final approval before delivery.</p>
+          </div>
+          <div class="card">
+            <h3>Final File Check</h3>
+            <p>A final production pass before handoff, with optional InDesign package delivery when appropriate.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section>
+    <section class="section-warm">
       <div class="wrap">
-        <h2>How Projects Are Quoted</h2>
+        <div class="eyebrow">Before you request a quote</div>
+        <h2>A better quote starts with the right information.</h2>
         <p class="lede">
-          Each project is quoted based on length, complexity, and production requirements. Straight text layouts
-          are different from projects with footnotes, charts, tables, layered headings, images, captions,
-          references, or other specialized elements.
+          If you have these details ready, the review process is faster and more accurate.
         </p>
-        <div class="grid">
+
+        <div class="quote-grid">
           <div class="card">
-            <h3>Length</h3>
-            <p>Word count, page count, and overall manuscript size affect the scope of the work.</p>
+            <h3>Project Basics</h3>
+            <ul class="checklist">
+              <li>Manuscript word count</li>
+              <li>Trim size</li>
+              <li>Genre or category</li>
+              <li>Interior only, cover, or jacket coordination</li>
+            </ul>
           </div>
+
           <div class="card">
-            <h3>Complexity</h3>
-            <p>Elements like notes, references, tables, charts, callouts, and images increase the level of detail involved.</p>
+            <h3>Publishing Needs</h3>
+            <ul class="checklist">
+              <li>Print, EPUB, or both</li>
+              <li>KDP, IngramSpark, Apple Books, Kobo, Barnes &amp; Noble Press, offset printer, or publisher specs</li>
+              <li>Deadline or launch window</li>
+            </ul>
           </div>
+
           <div class="card">
-            <h3>Structure</h3>
-            <p>Projects with multiple heading levels, special page treatments, or custom layout needs require added care.</p>
+            <h3>Complexity Details</h3>
+            <ul class="checklist">
+              <li>Images, tables, or charts</li>
+              <li>Footnotes, endnotes, or references</li>
+              <li>Callouts, sidebars, or special sections</li>
+              <li>Front matter and back matter needs</li>
+            </ul>
           </div>
+
           <div class="card">
-            <h3>Production Needs</h3>
-            <p>Print, digital, or hybrid output can shape file preparation and final deliverables.</p>
+            <h3>Manuscript Status</h3>
+            <ul class="checklist">
+              <li>Final or near-final manuscript</li>
+              <li>Edited and proofread text</li>
+              <li>Image files gathered</li>
+              <li>Known platform or printer requirements</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="process">
       <div class="wrap">
-        <h2>Why Ruff Press</h2>
+        <div class="eyebrow">Process</div>
+        <h2>From manuscript review to final production files.</h2>
+
         <div class="grid">
           <div class="card">
-            <h3>Built for readability</h3>
-            <p>Good typesetting should support the reading experience, not compete with it.</p>
+            <h3>1. Review Manuscript and Specs</h3>
+            <p>Share the manuscript, trim size, platform or printer requirements, complexity details, and timeline.</p>
           </div>
           <div class="card">
-            <h3>Comfortable with complexity</h3>
-            <p>Dense manuscripts and layered content are handled with structure and care.</p>
+            <h3>2. Quote and Production Plan</h3>
+            <p>Receive a clear estimate and a practical plan based on the actual needs of the project.</p>
           </div>
           <div class="card">
-            <h3>Editorially minded</h3>
-            <p>This is not template-driven formatting. Each project is shaped around the manuscript and how it needs to work on the page.</p>
+            <h3>3. Design Sample Pages</h3>
+            <p>A page system is developed for the manuscript, including hierarchy, body text, headings, and recurring elements.</p>
           </div>
           <div class="card">
-            <h3>Professional and direct</h3>
-            <p>Clear communication, straightforward process, and practical execution.</p>
+            <h3>4. Typeset, Proof, Revise, and Deliver</h3>
+            <p>The full project is typeset, reviewed, revised, checked, and delivered in the required final formats.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="section-dark">
+      <div class="wrap intro-layout">
+        <div>
+          <div class="eyebrow">Why Ruff Press</div>
+          <h2>For work where readability, structure, and production quality matter.</h2>
+        </div>
+        <div>
+          <p class="lede">
+            Good book design supports the reading experience. Dense manuscripts and layered content need structure,
+            patience, and production discipline.
+          </p>
+          <p class="lede">
+            The goal is simple: a book that reads clearly, looks professional, and is ready for the way it will actually be published.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="not-fit">
       <div class="wrap">
-        <h2>Process</h2>
+        <div class="eyebrow">Not a fit for</div>
+        <h2>Some projects are better handled elsewhere.</h2>
+
         <div class="grid">
           <div class="card">
-            <h3>1. Review</h3>
-            <p>Share your manuscript, scope, and timeline.</p>
+            <h3>Cheap Template Formatting</h3>
+            <p>If the goal is the lowest possible price and a generic layout, Ruff Press is probably not the right fit.</p>
           </div>
           <div class="card">
-            <h3>2. Quote</h3>
-            <p>Receive a clear estimate based on length, complexity, and production needs.</p>
+            <h3>Unfinished Manuscripts</h3>
+            <p>Projects still changing heavily every day are not ready for final design and typesetting.</p>
           </div>
           <div class="card">
-            <h3>3. Typesetting</h3>
-            <p>Your manuscript is shaped into a clean, readable, professionally structured interior.</p>
+            <h3>Rush Jobs Without Review Time</h3>
+            <p>Good production needs enough time for design, proofing, correction, and final checks.</p>
           </div>
           <div class="card">
-            <h3>4. Delivery</h3>
-            <p>Final files are prepared for print, digital use, or handoff to your printer or publishing partner.</p>
+            <h3>Projects Where Quality Does Not Matter</h3>
+            <p>Ruff Press is for work where readability, structure, and professional presentation matter.</p>
           </div>
         </div>
       </div>
     </section>
 
     <section id="about">
-      <div class="wrap">
-        <h2>About Ruff Press</h2>
-        <p class="lede">
-          Ruff Press is a boutique editorial studio focused on typesetting and long-form document production.
-          The work is disciplined, thoughtful, and built to hold up on the page.
-        </p>
+      <div class="wrap intro-layout">
+        <div>
+          <div class="eyebrow">About Ruff Press</div>
+          <h2>A boutique production studio for finished work.</h2>
+        </div>
+        <div>
+          <p class="lede">
+            Ruff Press focuses on design, typesetting, and long-form document production. The work is disciplined,
+            thoughtful, and built to hold up on the page.
+          </p>
+          <p class="lede">
+            Experience includes hundreds of books and publications across nonfiction, technical, educational, business,
+            religious, self-help, cooking, travel, and other long-form categories.
+          </p>
+        </div>
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="contact-band">
       <div class="wrap">
-        <h2>Request a Quote</h2>
+        <div class="eyebrow">Start your book production review</div>
+        <h2>Have a finished manuscript or long-form project ready for production?</h2>
+        <p class="lede">
+          Send the basics and Ruff Press will review the scope, complexity, and production needs.
+        </p>
+
+        <div class="cta-points">
+          <div class="cta-point">Clarify scope, deliverables, and timeline</div>
+          <div class="cta-point">Identify platform and file requirements</div>
+          <div class="cta-point">Catch complexity before production begins</div>
+          <div class="cta-point">Get a quote based on the real job, not a guess</div>
+        </div>
+
         <div class="contact-box">
           <p>
-            To start a conversation, email <a href="mailto:hello@ruffpress.com"><strong>hello@ruffpress.com</strong></a>
-            with your project type, approximate word count or page count, timeline, and any elements such as images,
-            tables, footnotes, references, or other complex features.
+            Email <a href="mailto:hello@ruffpress.com"><strong>hello@ruffpress.com</strong></a>
+            with your project type, approximate word count or page count, timeline, publishing platform,
+            and any elements such as images, tables, charts, footnotes, references, or callouts.
           </p>
+        </div>
+
+        <div class="actions">
+          <a class="btn light" href="mailto:hello@ruffpress.com">Email Ruff Press</a>
         </div>
       </div>
     </section>

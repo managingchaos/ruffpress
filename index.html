@@ -11,551 +11,21 @@
   />
 
   <link rel="stylesheet" href="https://use.typekit.net/bjv5hfz.css">
-  <link rel="icon" href="favicon.ico" sizes="any">
-
-  <style>
-    :root {
-      --bg: #f6f1e8;
-      --paper: #fffdf8;
-      --cream: #ebe3d5;
-      --text: #201c18;
-      --muted: #514b44;
-      --line: #cec2b2;
-      --dark: #23170f;
-      --accent: #4E1B17;
-      --max: 1160px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: "adelphi-pe-variable", Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      font-size: 17px;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img, video {
-      max-width: 100%;
-      display: block;
-    }
-
-    .wrap {
-      width: min(calc(100% - 2rem), var(--max));
-      margin: 0 auto;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      background: rgba(246, 241, 232, 0.94);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--line);
-      z-index: 100;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 0;
-      gap: 1rem;
-    }
-
-    .nav-links,
-    .eyebrow,
-    .btn,
-    .caption,
-    .proof-grid,
-    .trust-strip,
-    .video-caption,
-    .contact-note,
-    footer {
-      font-family: "mendl-sans", Arial, sans-serif;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      line-height: 0;
-      flex-shrink: 0;
-    }
-
-    .brand img {
-      display: block;
-      height: 42px;
-      width: auto;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.25rem;
-      flex-wrap: wrap;
-      font-size: 0.92rem;
-      color: var(--muted);
-    }
-
-    .nav-links a:hover { color: var(--accent); }
-
-    .hero {
-      padding: 7rem 0 5rem;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .hero-layout {
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 4rem;
-      align-items: end;
-    }
-
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 0.78rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-
-    h1, h2, h3 {
-      margin: 0 0 1rem;
-      line-height: 1.12;
-      font-weight: 400;
-      font-family: "meursault-variable", Georgia, "Times New Roman", serif;
-    }
-
-    h1 {
-      font-size: clamp(3rem, 7vw, 6rem);
-      max-width: 12.5ch;
-      letter-spacing: -0.04em;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      letter-spacing: -0.03em;
-    }
-
-    h3 { font-size: 1.2rem; }
-
-    p { margin-top: 0; }
-
-    .hero-copy {
-      max-width: 31rem;
-      color: var(--muted);
-      font-size: 1.12rem;
-    }
-
-    .hero-copy p { margin-bottom: 1.2rem; }
-
-    .actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-top: 1.5rem;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.9rem 1.25rem;
-      border: 1px solid var(--accent);
-      background: var(--accent);
-      color: var(--paper);
-      transition: 0.2s ease;
-      font-size: 0.95rem;
-    }
-
-    .btn:hover { opacity: 0.9; }
-
-    .btn.secondary {
-      background: transparent;
-      color: var(--accent);
-    }
-
-    .btn.light {
-      background: var(--paper);
-      color: var(--dark);
-      border-color: var(--paper);
-    }
-
-    .btn.light:hover { opacity: 0.88; }
-
-    .hero-art {
-      margin-top: 2.75rem;
-      max-width: 22rem;
-    }
-
-    .hero-art-image {
-      aspect-ratio: 4 / 3;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      overflow: hidden;
-    }
-
-    .hero-art-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .proof-bar {
-      background: var(--dark);
-      color: var(--paper);
-      padding: 1.35rem 0;
-    }
-
-    .proof-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1rem;
-      font-size: 0.95rem;
-    }
-
-    .proof-item {
-      border-left: 1px solid rgba(255, 255, 255, 0.24);
-      padding-left: 1rem;
-      color: rgba(255, 253, 248, 0.88);
-    }
-
-    .trust-strip-wrap { padding-top: 1.5rem; }
-
-    .trust-strip {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem 1.5rem;
-      color: var(--muted);
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    section {
-      padding: 5rem 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .section-warm { background: var(--cream); }
-
-    .section-dark {
-      background: var(--dark);
-      color: var(--paper);
-      border-bottom: none;
-    }
-
-    .section-dark .eyebrow { color: #d7a9a2; }
-    .section-dark .lede { color: rgba(255, 253, 248, 0.76); }
-
-    .lede {
-      max-width: 52rem;
-      color: var(--muted);
-      font-size: 1.08rem;
-    }
-
-    .intro-layout {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .callout {
-      border-left: 4px solid var(--accent);
-      padding: 1.3rem 1.5rem;
-      background: var(--paper);
-      color: var(--text);
-    }
-
-    .video-wrap { margin-top: 2rem; }
-
-    .video-frame {
-      aspect-ratio: 16 / 9;
-      background: #ddd6cb;
-      border: 1px solid var(--line);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .video-frame video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: sepia(0.72) saturate(0.78) contrast(0.92) brightness(0.82);
-    }
-
-    .video-overlay {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(
-          to top,
-          rgba(35, 23, 15, 0.64) 0%,
-          rgba(35, 23, 15, 0.30) 38%,
-          rgba(35, 23, 15, 0.10) 72%,
-          rgba(35, 23, 15, 0.03) 100%
-        ),
-        linear-gradient(
-          to bottom,
-          rgba(102, 70, 42, 0.18),
-          rgba(102, 70, 42, 0.18)
-        );
-      pointer-events: none;
-    }
-
-    .video-overlay-text {
-      position: absolute;
-      left: 1.5rem;
-      bottom: 1.4rem;
-      max-width: 30rem;
-      color: var(--paper);
-      z-index: 2;
-    }
-
-    .video-logo {
-      margin-bottom: 0.75rem;
-      max-width: 180px;
-    }
-
-    .video-logo img {
-      display: block;
-      width: 100%;
-      height: auto;
-      filter: brightness(0) invert(1);
-    }
-
-    .video-title {
-      font-family: "meursault-variable", Georgia, "Times New Roman", serif;
-      font-size: clamp(1.4rem, 2.4vw, 2.2rem);
-      line-height: 1.08;
-      letter-spacing: -0.02em;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.25rem;
-      margin-top: 2rem;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.25rem;
-      margin-top: 2rem;
-    }
-
-    .card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      padding: 1.6rem;
-      font-size: 1.02rem;
-    }
-
-    .card p:last-child { margin-bottom: 0; }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: 1.35fr 0.65fr;
-      gap: 1.25rem;
-      margin-top: 2rem;
-    }
-
-    .feature-main,
-    .feature-side {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .feature-image,
-    .side-image {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      overflow: hidden;
-    }
-
-    .feature-image { aspect-ratio: 16 / 10; }
-    .side-image { aspect-ratio: 4 / 3; }
-
-    .feature-image img,
-    .side-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .caption {
-      color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.4;
-    }
-
-    .side-stack {
-      display: grid;
-      gap: 1.25rem;
-    }
-
-    .service-row {
-      display: grid;
-      grid-template-columns: 0.7fr 1.3fr;
-      gap: 2rem;
-      padding: 2rem 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .service-row:last-child { border-bottom: 1px solid var(--line); }
-
-    .service-row p {
-      color: var(--muted);
-      max-width: 52rem;
-    }
-
-    .comparison-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
-      margin-top: 2rem;
-    }
-
-    .comparison-box {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      padding: 1.75rem;
-    }
-
-    .comparison-box h3 { margin-bottom: 1rem; }
-
-    .comparison-box ul {
-      margin: 0;
-      padding-left: 1.2rem;
-      color: var(--muted);
-    }
-
-    .comparison-box li { margin-bottom: 0.55rem; }
-
-    ul.checklist {
-      padding-left: 1.2rem;
-      margin: 1rem 0 0;
-      color: var(--muted);
-    }
-
-    ul.checklist li { margin-bottom: 0.45rem; }
-
-    .quote-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
-      margin-top: 2rem;
-    }
-
-    .not-fit { background: #f9f6f0; }
-
-    .contact-band {
-      background: var(--dark);
-      color: var(--paper);
-      padding: 5rem 0;
-    }
-
-    .contact-band .eyebrow { color: #d7a9a2; }
-    .contact-band .lede { color: rgba(255, 253, 248, 0.76); }
-
-    .cta-points {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .cta-point {
-      color: rgba(255, 253, 248, 0.78);
-      font-family: "mendl-sans", Arial, sans-serif;
-      font-size: 0.92rem;
-      border-top: 1px solid rgba(255, 253, 248, 0.18);
-      padding-top: 0.9rem;
-    }
-
-    .contact-note {
-      margin-top: 1.25rem;
-      color: rgba(255, 253, 248, 0.78);
-      font-size: 0.95rem;
-    }
-
-    .contact-note a { color: #f4c3bb; }
-
-    footer {
-      padding: 2rem 0 4rem;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 920px) {
-      .hero-layout,
-      .intro-layout,
-      .feature-grid,
-      .service-row,
-      .quote-grid,
-      .comparison-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .proof-grid,
-      .grid-3,
-      .cta-points {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .hero-art { max-width: 28rem; }
-      h1 { max-width: 12ch; }
-    }
-
-    @media (max-width: 720px) {
-      .grid,
-      .grid-3,
-      .proof-grid,
-      .cta-points {
-        grid-template-columns: 1fr;
-      }
-
-      .nav {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .brand img { height: 36px; }
-
-      .hero { padding-top: 4.5rem; }
-
-      section { padding: 4rem 0; }
-
-      .video-overlay-text {
-        left: 1rem;
-        right: 1rem;
-        bottom: 1rem;
-      }
-
-      .video-logo { max-width: 150px; }
-    }
-  </style>
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
 </head>
 
 <body>
   <header>
     <div class="wrap nav">
-      <a class="brand" href="index.html" aria-label="Ruff Press home">
-        <img src="images/ruff_press-logo.svg" alt="Ruff Press">
+      <a class="brand" href="/" aria-label="Ruff Press home">
+        <img src="/images/ruff_press-logo.svg" alt="Ruff Press">
       </a>
       <nav class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#work">Work</a>
-        <a href="#process">Process</a>
-        <a href="#contact">Contact</a>
+        <a href="/#services">Services</a>
+        <a href="/#work">Work</a>
+        <a href="/#process">Process</a>
+        <a href="/#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -574,13 +44,13 @@
             experts, and organizations producing books, reports, and long-form documents.
           </p>
           <div class="actions">
-            <a class="btn" href="review.html">Start Your Production Review</a>
-            <a class="btn secondary" href="#work">See Sample Work</a>
+            <a class="btn" href="/review/">Start Your Production Review</a>
+            <a class="btn secondary" href="/#work">See Sample Work</a>
           </div>
 
           <div class="hero-art">
             <div class="hero-art-image">
-              <img src="images/hero-detail.jpg" alt="Close detail of a professionally produced book interior and hardcover">
+              <img src="/images/hero-detail.jpg" alt="Close detail of a professionally produced book interior and hardcover">
             </div>
           </div>
         </div>
@@ -643,14 +113,14 @@
               playsinline
               webkit-playsinline
               preload="auto"
-              poster="images/video-poster.jpg"
+              poster="/images/video-poster.jpg"
             >
-              <source src="videos/ruffpress-process.mp4" type="video/mp4">
+              <source src="/videos/ruffpress-process.mp4" type="video/mp4">
             </video>
             <div class="video-overlay"></div>
             <div class="video-overlay-text">
               <div class="video-logo">
-                <img src="images/ruff_press-logo.svg" alt="Ruff Press">
+                <img src="/images/ruff_press-logo.svg" alt="Ruff Press">
               </div>
               <div class="video-title">From finished manuscript to production-ready book</div>
             </div>
@@ -668,7 +138,7 @@
         <div class="feature-grid">
           <div class="feature-main">
             <div class="feature-image">
-              <img src="images/sample-1.jpg" alt="Business book interior system sample">
+              <img src="/images/sample-1.jpg" alt="Business book interior system sample">
             </div>
             <div class="caption">Business book interior system</div>
           </div>
@@ -676,14 +146,14 @@
           <div class="side-stack">
             <div class="feature-side">
               <div class="side-image">
-                <img src="images/sample-2.jpg" alt="Technical nonfiction spread sample">
+                <img src="/images/sample-2.jpg" alt="Technical nonfiction spread sample">
               </div>
               <div class="caption">Technical nonfiction spread</div>
             </div>
 
             <div class="feature-side">
               <div class="side-image">
-                <img src="images/sample-3.jpg" alt="Guide, workbook, or report layout sample">
+                <img src="/images/sample-3.jpg" alt="Guide, workbook, or report layout sample">
               </div>
               <div class="caption">Guide, workbook, or report layout</div>
             </div>
@@ -997,7 +467,7 @@
         </div>
 
         <div class="actions">
-          <a class="btn light" href="review.html">Start Your Production Review</a>
+          <a class="btn light" href="/review/">Start Your Production Review</a>
         </div>
 
         <p class="contact-note">
@@ -1011,31 +481,6 @@
     <div class="wrap">© Ruff Press. All rights reserved.</div>
   </footer>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const video = document.getElementById("ruffpress-video");
-      if (!video) return;
-
-      video.muted = true;
-      video.defaultMuted = true;
-      video.playsInline = true;
-      video.setAttribute("muted", "");
-      video.setAttribute("playsinline", "");
-      video.setAttribute("webkit-playsinline", "");
-
-      const tryPlay = () => {
-        const promise = video.play();
-        if (promise !== undefined) {
-          promise.catch(() => {});
-        }
-      };
-
-      tryPlay();
-      window.addEventListener("load", tryPlay);
-      document.addEventListener("visibilitychange", function () {
-        if (!document.hidden) tryPlay();
-      });
-    });
-  </script>
+  <script src="/js/site.js"></script>
 </body>
 </html>
